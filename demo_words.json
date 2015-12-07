@@ -24,8 +24,47 @@
     word: 'ვარ',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
-    person_marker: 'first_person',
+    person_marker: 'first person',
     count_type: 'singular',
     lemma: 'არის'
-  }
+  },
+  {
+    word: 'ხარ',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'second person',
+    count_type: 'singular',
+    lemma: 'არის'
+  },
+  {
+    word: 'არის',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'third person',
+    count_type: 'singular'
+  },
+  {
+    word: 'ვართ',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'first person',
+    count_type: 'plural',
+    lemma: 'არის'
+  },
+  {
+    word: 'ხართ',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'second person',
+    count_type: 'plural',
+    lemma: 'არის'
+  },
+  {
+    word: 'არიან',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'third person',
+    count_type: 'plural',
+    lemma: 'არის'
+  },
 ]
