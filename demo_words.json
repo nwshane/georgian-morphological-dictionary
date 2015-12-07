@@ -1,0 +1,31 @@
+[
+  {
+    word: 'ყოფნა',
+    type: 'ზმნის ფუძე',
+    num_person_markers: 1,
+    lemma: 'არის'
+  },
+  {
+    word: 'მყოფი',
+    type: 'არსებითი სახელი',
+    lemma: 'არის'
+  },
+  {
+    word: 'ყოფილი',
+    type: 'ზედსართავი',
+    lemma: 'არის'
+  },
+  {
+    word: 'ნამყოფი',
+    type: 'ზედსართავი',
+    lemma: 'არის'
+  },
+  {
+    word: 'ვარ',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'first_person',
+    count_type: 'singular',
+    lemma: 'არის'
+  }
+]
