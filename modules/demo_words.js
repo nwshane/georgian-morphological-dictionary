@@ -1,4 +1,4 @@
-var words = [
+let words = [
   {
     word: 'ყოფნა',
     type: 'ზმნის ფუძე',
