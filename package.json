@@ -1,0 +1,10 @@
+{
+  "name": "georgian-morphology-dictionary",
+  "main": "dist/modules.js",
+  "devDependencies": {
+      "grunt": "^0.4.5",
+      "babelify": "^6.1.0",
+      "grunt-browserify": "^3.8.0",
+      "grunt-contrib-watch": "^0.6.1"
+  }
+}

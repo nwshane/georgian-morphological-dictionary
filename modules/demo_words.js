@@ -1,4 +1,4 @@
-[
+var words = [
   {
     word: 'ყოფნა',
     type: 'ზმნის ფუძე',
@@ -67,4 +67,6 @@
     count_type: 'plural',
     lemma: 'არის'
   },
-]
+];
+
+export { words };
