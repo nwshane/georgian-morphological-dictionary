@@ -67,6 +67,59 @@ let words = [
     count_type: 'plural',
     lemma: 'არის'
   },
+  {
+    word: 'გაკეთება',
+    type: 'ზმნის ფუძე',
+    num_person_markers: 2,
+    lemma: 'აკეთებს'
+  },
+  {
+    word: 'ვაკეთებ',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'first person',
+    count_type: 'singular',
+    lemma: 'აკეთებს'
+  },
+  {
+    word: 'აკეთებ',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'second person',
+    count_type: 'singular',
+    lemma: 'აკეთებს'
+  },
+  {
+    word: 'აკეთებს',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'third person',
+    count_type: 'singular'
+  },
+  {
+    word: 'ვაკეთებთ',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'first person',
+    count_type: 'plural',
+    lemma: 'აკეთებს'
+  },
+  {
+    word: 'აკეთებთ',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'second person',
+    count_type: 'plural',
+    lemma: 'აკეთებს'
+  },
+  {
+    word: 'აკეთებენ',
+    type: 'ზმნის უღლება',
+    verb_tense: 'აწმყო',
+    person_marker: 'third person',
+    count_type: 'plural',
+    lemma: 'აკეთებს'
+  },
 ];
 
 export { words };
