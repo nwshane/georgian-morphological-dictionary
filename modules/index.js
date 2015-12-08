@@ -14,12 +14,14 @@ function search_for_word(search_word) {
   return selected_words;
 }
 
-$(document).ready(function() {
-
+function bind_word_search_to_search_input() {
   $('.js-search-for-word').change(function() {
       let search_word = $(this).val();
       let selected_words = search_for_word(search_word);
       console.log(selected_words);
   });
+}
 
+$(document).ready(function() {
+  bind_word_search_to_search_input();
 });
