@@ -14,7 +14,7 @@ function fake_words_api_search(search_word) {
 
   let related_words = words.filter(function(word) {
     return (word['word'] == search_word_lemma || word['lemma'] == search_word_lemma);
-  })
+  });
 
   return [search_word_info, related_words];
 }
