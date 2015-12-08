@@ -4,7 +4,7 @@ function find_related_words(search_word_info) {
   let search_word_lemma = search_word_info['lemma'];
 
   let related_words = words.filter(function(word) {
-    return (word['word'] == search_word_lemma || word['lemma'] == search_word_lemma) && word['word'] !== search_word_info['word'];
+    return (word['word'] == search_word_lemma || word['lemma'] == search_word_lemma);
   });
 
   return related_words
