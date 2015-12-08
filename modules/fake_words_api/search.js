@@ -16,7 +16,10 @@ function fake_words_api_search(search_word) {
     return (word['word'] == search_word_lemma || word['lemma'] == search_word_lemma);
   });
 
-  return [search_word_info, related_words];
+  return {
+    search_word: search_word_info,
+    related_words: related_words
+  };
 }
 
 export { fake_words_api_search };
