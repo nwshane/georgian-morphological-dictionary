@@ -9,7 +9,13 @@ function search_for_word(search_word) {
 function display_word_info(results) {
   let search_word_info = results['search_word'];
   let related_words = results['related_words'];
-  $('.js-fill-with-search-results').html('<h2>' + search_word_info['word'] + '</h2>')
+  let word_html = '<h2>Results for "' + search_word_info['word'] + '":</h2>';
+
+  for (var i = 0; i < related_words.length; i++) {
+    word_html += ('<p>' + related_words[i]['word'] + '</p>');
+  }
+
+  $('.js-fill-with-search-results').html(word_html);
 }
 
 function search_for_word_and_display_results(word) {

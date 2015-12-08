@@ -8,9 +8,9 @@ function fake_words_api_search(search_word) {
   // return the array
   let search_word_info = words.filter(function(word) {
     return (word['word'] == search_word);
-  });
+  })[0];
 
-  let search_word_lemma = search_word_info[0]['lemma'];
+  let search_word_lemma = search_word_info['lemma'];
 
   let related_words = words.filter(function(word) {
     return (word['word'] == search_word_lemma || word['lemma'] == search_word_lemma);
