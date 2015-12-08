@@ -1,27 +1,27 @@
 let words = [
   {
-    word: 'ყოფნა',
+    text: 'ყოფნა',
     type: 'ზმნის ფუძე',
     num_person_markers: 1,
     lemma: 'არის'
   },
   {
-    word: 'მყოფი',
+    text: 'მყოფი',
     type: 'არსებითი სახელი',
     lemma: 'არის'
   },
   {
-    word: 'ყოფილი',
+    text: 'ყოფილი',
     type: 'ზედსართავი',
     lemma: 'არის'
   },
   {
-    word: 'ნამყოფი',
+    text: 'ნამყოფი',
     type: 'ზედსართავი',
     lemma: 'არის'
   },
   {
-    word: 'ვარ',
+    text: 'ვარ',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'first person',
@@ -29,7 +29,7 @@ let words = [
     lemma: 'არის'
   },
   {
-    word: 'ხარ',
+    text: 'ხარ',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'second person',
@@ -37,14 +37,14 @@ let words = [
     lemma: 'არის'
   },
   {
-    word: 'არის',
+    text: 'არის',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'third person',
     count_type: 'singular'
   },
   {
-    word: 'ვართ',
+    text: 'ვართ',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'first person',
@@ -52,7 +52,7 @@ let words = [
     lemma: 'არის'
   },
   {
-    word: 'ხართ',
+    text: 'ხართ',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'second person',
@@ -60,7 +60,7 @@ let words = [
     lemma: 'არის'
   },
   {
-    word: 'არიან',
+    text: 'არიან',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'third person',
@@ -68,13 +68,13 @@ let words = [
     lemma: 'არის'
   },
   {
-    word: 'გაკეთება',
+    text: 'გაკეთება',
     type: 'ზმნის ფუძე',
     num_person_markers: 2,
     lemma: 'აკეთებს'
   },
   {
-    word: 'ვაკეთებ',
+    text: 'ვაკეთებ',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'first person',
@@ -82,7 +82,7 @@ let words = [
     lemma: 'აკეთებს'
   },
   {
-    word: 'აკეთებ',
+    text: 'აკეთებ',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'second person',
@@ -90,14 +90,14 @@ let words = [
     lemma: 'აკეთებს'
   },
   {
-    word: 'აკეთებს',
+    text: 'აკეთებს',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'third person',
     count_type: 'singular'
   },
   {
-    word: 'ვაკეთებთ',
+    text: 'ვაკეთებთ',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'first person',
@@ -105,7 +105,7 @@ let words = [
     lemma: 'აკეთებს'
   },
   {
-    word: 'აკეთებთ',
+    text: 'აკეთებთ',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'second person',
@@ -113,7 +113,7 @@ let words = [
     lemma: 'აკეთებს'
   },
   {
-    word: 'აკეთებენ',
+    text: 'აკეთებენ',
     type: 'ზმნის უღლება',
     verb_tense: 'აწმყო',
     person_marker: 'third person',
