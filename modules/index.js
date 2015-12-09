@@ -8,7 +8,7 @@ function search_for_word(search_word) {
 
 function display_word_search_results(word, results) {
   let related_words = results['related_words'];
-  let word_html = '<h2>Words related to "' + word + '":</h2>';
+  let word_html = '<h2>Results for "' + word + '":</h2>';
 
   for (var i = 0; i < related_words.length; i++) {
     word_html += ('<p>' + related_words[i]['text'] + '</p>');
