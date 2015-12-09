@@ -22,9 +22,8 @@ function fake_words_api_search(search_word) {
   let search_word_info = find_word_info(search_word);
 
   return {
-    search_word: search_word_info,
     related_words: find_related_words(search_word_info)
-  };
+  }
 }
 
 export { fake_words_api_search };
