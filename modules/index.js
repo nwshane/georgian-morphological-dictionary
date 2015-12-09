@@ -6,15 +6,16 @@ function search_for_word(search_word) {
   return response;
 }
 
-function display_word_search_results(word, results) {
-  let related_words = results['related_words'];
-  let results_html = '<h2>Results for {{word}}:</h2>';
-
-  let template = Handlebars.compile(results_html);
+function display_word_search_results(search_word_text, response) {
+  let word_results = response['related_words'];
 
   let data = {
-    word: word
+    search_word_text: search_word_text,
+    word_results: word_results
   }
+
+  let results_html = '<h2>Results for {{search_word_text}}:</h2>';
+  let template = Handlebars.compile(results_html);
 
   let result = template(data)
 
@@ -22,7 +23,7 @@ function display_word_search_results(word, results) {
   //   word_html += ('<p>' + related_words[i]['text'] + '</p>');
   // }
 
-  // $('.js-fill-with-search-results').html(word_html);
+  $('.js-fill-with-search-results').html(result);
 }
 
 function search_for_word_and_display_results(word) {
