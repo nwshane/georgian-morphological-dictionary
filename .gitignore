@@ -1,2 +1,3 @@
 dist/*
 node_modules/*
+modules/fake_words_api/demo_words.js
