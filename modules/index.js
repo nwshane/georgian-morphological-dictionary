@@ -6,7 +6,7 @@ function search_for_word(search_word) {
   return response;
 }
 
-function display_word_info(results) {
+function display_word_search_results(results) {
   let search_word_info = results['search_word'];
   let related_words = results['related_words'];
   let word_html = '<h2>Words related to "' + search_word_info['text'] + '":</h2>';
@@ -20,7 +20,7 @@ function display_word_info(results) {
 
 function search_for_word_and_display_results(word) {
   let response = search_for_word(word);
-  display_word_info(response);
+  display_word_search_results(response);
 }
 
 function bind_word_search_to_search_input() {
