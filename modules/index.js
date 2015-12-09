@@ -8,13 +8,21 @@ function search_for_word(search_word) {
 
 function display_word_search_results(word, results) {
   let related_words = results['related_words'];
-  let word_html = '<h2>Results for "' + word + '":</h2>';
+  let results_html = '<h2>Results for {{word}}:</h2>';
 
-  for (var i = 0; i < related_words.length; i++) {
-    word_html += ('<p>' + related_words[i]['text'] + '</p>');
+  let template = Handlebars.compile(results_html);
+
+  let data = {
+    word: word
   }
 
-  $('.js-fill-with-search-results').html(word_html);
+  let result = template(data)
+
+  // for (var i = 0; i < related_words.length; i++) {
+  //   word_html += ('<p>' + related_words[i]['text'] + '</p>');
+  // }
+
+  // $('.js-fill-with-search-results').html(word_html);
 }
 
 function search_for_word_and_display_results(word) {
