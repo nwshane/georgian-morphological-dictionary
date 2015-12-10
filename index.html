@@ -11,19 +11,23 @@
 </head>
 <body>
 
-  <h1>Georgian Morphology Dictionary</h1>
+  <main class='main-content'>
+    <h1 class='heading mod-primary'>Georgian Morphology Dictionary</h1>
 
-  <section>
+    <section class='search-box'>
 
-    <h2>Search for Word:</h2>
+      <h2 class='heading is-hidden'>Word Search Box</h2>
 
-    <input type=search class='js-search-for-word' autofocus>
+      <label class='search-box-label'>
+        Search for a Word:
+      </label>
 
-  </section>
+      <input type=search class='search-box-input js-search-for-word' autofocus>
 
-  <article class='js-fill-with-search-results'>
+    </section>
 
-  </article>
+    <article class='js-fill-with-search-results'></article>
+  </main>
 
   <script src='http://code.jquery.com/jquery-2.0.0.min.js'></script>
   <script src='node_modules/handlebars/dist/handlebars.min.js'></script>
