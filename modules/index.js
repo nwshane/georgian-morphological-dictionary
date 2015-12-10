@@ -19,10 +19,6 @@ function display_word_search_results(search_word_text, response) {
 
   let result = template(data)
 
-  // for (var i = 0; i < related_words.length; i++) {
-  //   word_html += ('<p>' + related_words[i]['text'] + '</p>');
-  // }
-
   $('.js-fill-with-search-results').html(result);
 }
 
