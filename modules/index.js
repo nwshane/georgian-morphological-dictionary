@@ -7,7 +7,7 @@ function search_for_word(search_word) {
 }
 
 function display_word_search_results(search_word_text, response) {
-  let search_results = response['related_words'];
+  let search_results = response['search_results'];
 
   let data = {
     search_word_text: search_word_text,
