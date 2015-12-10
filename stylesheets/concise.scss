@@ -1,0 +1,11 @@
+@import '../node_modules/concise.css/src/concise.scss';
+
+[container] {
+  width: 90%;
+}
+
+@media (min-width: 48em) {
+  [container] {
+    width: 726px;
+  }
+}
