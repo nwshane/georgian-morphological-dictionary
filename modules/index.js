@@ -14,7 +14,7 @@ function display_word_search_results(search_word_text, response) {
     word_results: word_results
   }
 
-  let results_html = '<h2>Results for {{search_word_text}}:</h2>';
+  let results_html = "<h2 class='heading mod-search-results'>{{search_word_text}}</h2>";
   let template = Handlebars.compile(results_html);
 
   let result = template(data)

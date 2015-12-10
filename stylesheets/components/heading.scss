@@ -6,3 +6,9 @@
 .heading.is-hidden {
   display: none;
 }
+
+.heading.mod-search-results {
+  text-align: center;
+  letter-spacing: 0.5rem;
+  border-bottom: 1px solid getColor(gray, lighter);
+}
