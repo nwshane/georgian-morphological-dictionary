@@ -11,10 +11,17 @@ function display_word_search_results(search_word_text, response) {
 
   let data = {
     search_word_text: search_word_text,
+    search_word_type: 'This type!',
     search_results: search_results
   };
 
   let results_html = "<h2 class='heading mod-search-results'>{{search_word_text}}</h2>";
+  results_html +=
+  "<section>\
+    <h3>Word Info</h3>\
+    <p>Type: {{search_word_type}}</p>\
+  </section>"
+
   let template = Handlebars.compile(results_html);
 
   let result = template(data);
