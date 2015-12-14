@@ -12,8 +12,12 @@ function filter_word_by_text(words, word_text) {
   })[0];
 }
 
+function get_search_results_from_response(response) {
+  return response['search_results'];
+}
+
 function display_word_search_results(search_word_text, response) {
-  let search_results = response['search_results'];
+  let search_results = get_search_results_from_response(response);
   let search_word = filter_word_by_text(search_results, search_word_text);
 
   let data = {
