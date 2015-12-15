@@ -17,17 +17,14 @@ function get_search_results_from_response(response) {
   return response['search_results'];
 }
 
-function search_and_display_results(search_query) {
-  let response = perform_search(search_query);
-  let search_results = get_search_results_from_response(response);
-  let search_word = filter_word_by_text(search_results, search_query);
-
-  search_results_container.fill(search_word, search_results);
-}
-
 function bind_word_search_to_search_input() {
   $('.js-perform-search').change(function() {
-    search_and_display_results($(this).val());
+    let search_query = this.value;
+    let response = perform_search(search_query);
+    let search_results = get_search_results_from_response(response);
+    let search_word = filter_word_by_text(search_results, search_query);
+
+    search_results_container.fill(search_word, search_results);
   });
 }
 
