@@ -7,6 +7,10 @@ function perform_search(search_word) {
   return response;
 }
 
+let search_input = {
+  selector: '.js-perform-search'
+}
+
 function filter_word_by_text(words, word_text) {
   return words.filter(function(word) {
     return word['text'] == word_text;
@@ -18,7 +22,7 @@ function get_search_results_from_response(response) {
 }
 
 function bind_word_search_to_search_input() {
-  $('.js-perform-search').change(function() {
+  $(search_input.selector).change(function() {
     let search_query = this.value;
     let response = perform_search(search_query);
     let search_results = get_search_results_from_response(response);
