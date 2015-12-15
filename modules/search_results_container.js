@@ -9,11 +9,14 @@ let search_results_container = {
     <p>Type: {{search_word_type}}</p>\
   </section>",
 
-  fill: function(processed_results) {
+  compile_results_into_html: function(results) {
     let template = Handlebars.compile(this.template);
-    let result = template(processed_results);
+    return template(results);
+  },
 
-    this.change_html(result);
+  fill: function(results) {
+    let new_html = this.compile_results_into_html(results);
+    this.change_html(new_html);
   },
 
   change_html: function(new_html) {
