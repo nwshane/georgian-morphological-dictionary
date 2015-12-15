@@ -21,7 +21,7 @@ function display_word_search_results(search_word_text, response) {
   let search_word = filter_word_by_text(search_results, search_word_text);
 
   let data = {
-    search_word_text: search_word_text,
+    search_word_text: search_word['text'],
     search_word_type: search_word['type'],
     search_results: search_results
   };
