@@ -3,8 +3,7 @@
 module.exports = function() {
 
   this.Given(/^I am on the search page$/, function (callback) {
-    this.visit_search_page();
-    callback();
+    this.visit_search_page(callback);
   });
 
   this.When(/^I search for გაკეთება$/, function (callback) {
