@@ -16,8 +16,11 @@ function get_search_results_from_response(response) {
   return response['search_results'];
 }
 
-function change_search_results_container_html(new_html) {
-  $('.js-fill-with-search-results').html(new_html);
+let search_results_container = {
+  selector: '.js-fill-with-search-results',
+  change_html: function(new_html) {
+    $(this.selector).html(new_html);
+  }
 }
 
 function display_word_search_results(search_word_text, search_results) {
@@ -39,7 +42,7 @@ function display_word_search_results(search_word_text, search_results) {
   let template = Handlebars.compile(results_html);
   let result = template(data);
 
-  change_search_results_container_html(result);
+  search_results_container.change_html(result);
 }
 
 function search_for_word_and_display_results(word) {
