@@ -16,8 +16,7 @@ function get_search_results_from_response(response) {
   return response['search_results'];
 }
 
-function display_word_search_results(search_word_text, response) {
-  let search_results = get_search_results_from_response(response);
+function display_word_search_results(search_word_text, search_results) {
   let search_word = filter_word_by_text(search_results, search_word_text);
 
   let data = {
@@ -42,7 +41,9 @@ function display_word_search_results(search_word_text, response) {
 
 function search_for_word_and_display_results(word) {
   let response = search_for_word(word);
-  display_word_search_results(word, response);
+  let search_results = get_search_results_from_response(response);
+
+  display_word_search_results(word, search_results);
 }
 
 function bind_word_search_to_search_input() {
