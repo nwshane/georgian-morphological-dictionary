@@ -1,4 +1,5 @@
 import { fake_words_api_search } from './fake_words_api/search.js';
+import { search_results_container } from './search_results_container.js';
 
 function search_for_word(search_word) {
   let response = fake_words_api_search(search_word);
@@ -14,13 +15,6 @@ function filter_word_by_text(words, word_text) {
 
 function get_search_results_from_response(response) {
   return response['search_results'];
-}
-
-let search_results_container = {
-  selector: '.js-fill-with-search-results',
-  change_html: function(new_html) {
-    $(this.selector).html(new_html);
-  }
 }
 
 function display_word_search_results(search_word_text, search_results) {
