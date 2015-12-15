@@ -17,26 +17,12 @@ function get_search_results_from_response(response) {
   return response['search_results'];
 }
 
-function display_word_search_results(search_word_text, search_results) {
+function search_for_word_and_display_results(search_word_text) {
+  let response = search_for_word(search_word_text);
+  let search_results = get_search_results_from_response(response);
   let search_word = filter_word_by_text(search_results, search_word_text);
 
-  let data = {
-    search_word_text: search_word['text'],
-    search_word_type: search_word['type'],
-    search_results: search_results
-  };
-
-  let template = Handlebars.compile(search_results_container.template);
-  let result = template(data);
-
-  search_results_container.change_html(result);
-}
-
-function search_for_word_and_display_results(word) {
-  let response = search_for_word(word);
-  let search_results = get_search_results_from_response(response);
-
-  display_word_search_results(word, search_results);
+  search_results_container.fill(search_word, search_results);
 }
 
 function bind_word_search_to_search_input() {

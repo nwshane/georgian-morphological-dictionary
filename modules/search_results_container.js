@@ -9,9 +9,22 @@ let search_results_container = {
     <p>Type: {{search_word_type}}</p>\
   </section>",
 
+  fill: function(search_word, search_results) {
+    let data = {
+      search_word_text: search_word['text'],
+      search_word_type: search_word['type'],
+      search_results: search_results
+    };
+
+    let template = Handlebars.compile(this.template);
+    let result = template(data);
+
+    this.change_html(result)
+  },
+
   change_html: function(new_html) {
     $(this.selector).html(new_html);
-  }
+  },
 }
 
 export { search_results_container };
