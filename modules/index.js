@@ -26,7 +26,7 @@ function search_and_display_results(search_query) {
 }
 
 function bind_word_search_to_search_input() {
-  $('.js-search-for-word').change(function() {
+  $('.js-perform-search').change(function() {
     search_and_display_results($(this).val());
   });
 }
