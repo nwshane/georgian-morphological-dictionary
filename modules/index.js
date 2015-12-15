@@ -8,7 +8,20 @@ function perform_search(search_word) {
 }
 
 let search_input = {
-  selector: '.js-perform-search'
+
+  selector: '.js-perform-search',
+
+  bind_to_search_method: function() {
+    $(this.selector).change(function() {
+      let search_query = this.value;
+      let response = perform_search(search_query);
+      let search_results = get_search_results_from_response(response);
+      let search_word = filter_word_by_text(search_results, search_query);
+
+      search_results_container.fill(search_word, search_results);
+    });
+  }
+
 }
 
 function filter_word_by_text(words, word_text) {
@@ -21,17 +34,6 @@ function get_search_results_from_response(response) {
   return response['search_results'];
 }
 
-function bind_word_search_to_search_input() {
-  $(search_input.selector).change(function() {
-    let search_query = this.value;
-    let response = perform_search(search_query);
-    let search_results = get_search_results_from_response(response);
-    let search_word = filter_word_by_text(search_results, search_query);
-
-    search_results_container.fill(search_word, search_results);
-  });
-}
-
 $(document).ready(function() {
-  bind_word_search_to_search_input();
+  search_input.bind_to_search_method();
 });
