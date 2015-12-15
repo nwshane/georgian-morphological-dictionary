@@ -19,7 +19,7 @@ let search_results_container = {
     let template = Handlebars.compile(this.template);
     let result = template(data);
 
-    this.change_html(result)
+    this.change_html(result);
   },
 
   change_html: function(new_html) {
