@@ -7,6 +7,19 @@ function perform_search(search_word) {
   return response;
 }
 
+function process_response(response, search_query) {
+  let search_results = get_search_results_from_response(response);
+  let search_word = filter_word_by_text(search_results, search_query);
+
+  let data = {
+    search_word_text: search_word['text'],
+    search_word_type: search_word['type'],
+    search_results: search_results
+  };
+
+  return data;
+}
+
 let search_input = {
 
   selector: '.js-perform-search',
@@ -15,10 +28,10 @@ let search_input = {
     $(this.selector).change(function() {
       let search_query = this.value;
       let response = perform_search(search_query);
-      let search_results = get_search_results_from_response(response);
-      let search_word = filter_word_by_text(search_results, search_query);
 
-      search_results_container.fill(search_word, search_results);
+      let processed_results = process_response(response, search_query);
+
+      search_results_container.fill(processed_results);
     });
   }
 
