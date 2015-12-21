@@ -10,6 +10,11 @@ module.exports = function() {
     callback();
   });
 
+  this.When(/^I search for "([^"]*)"$/, function (search_query, callback) {
+    this.browser.fill('.js-perform-search', search_query);
+    callback();
+  });
+
   this.Then(/^I should see "([^"]*)" as the title$/, function (title_text, callback) {
     this.browser.assert.text('title', title_text);
     callback();
@@ -17,11 +22,6 @@ module.exports = function() {
 
   this.Then(/^I should see "([^"]*)" as the page's heading$/, function (page_heading_text, callback) {
     this.browser.assert.text('h1', page_heading_text);
-    callback();
-  });
-
-  this.When(/^I search for "([^"]*)"$/, function (search_query, callback) {
-    this.browser.fill('.js-perform-search', search_query);
     callback();
   });
 
