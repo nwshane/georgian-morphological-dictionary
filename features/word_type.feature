@@ -5,9 +5,9 @@ Feature: Search displays word type
   Scenario: Determining word type of "გაკეთება"
     Given I am on the search page
     When I search for "გაკეთება"
-    Then I should see "ზმნის პუძე" in the results
+    Then I should see "ზმნის პუძე" as the word type
 
   Scenario: Determining word type of "აკეთებს"
     Given I am on the search page
     When I search for "აკეთებს"
-    Then I should see "ზმნა" in the results
+    Then I should see "ზმნა" as the word type

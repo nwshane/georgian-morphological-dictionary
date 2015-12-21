@@ -25,7 +25,7 @@ module.exports = function() {
     callback();
   });
 
-  this.Then(/^I should see "([^"]*)" in the results$/, function (word_type, callback) {
+  this.Then(/^I should see "([^"]*)" as the word type$/, function (word_type, callback) {
     this.browser.assert.text('p', 'Type: ' + word_type);
     callback();
   });
