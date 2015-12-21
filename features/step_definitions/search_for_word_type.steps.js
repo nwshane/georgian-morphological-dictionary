@@ -21,9 +21,13 @@ module.exports = function() {
   });
 
   this.When(/^I search for გაკეთება$/, function (callback) {
+    this.browser.fill('.js-perform-search', 'გაკეთება');
+    callback();
   });
 
   this.Then(/^I should see "([^"]*)" in the results$/, function (arg1, callback) {
+    this.browser.assert.text('p', 'Type: ' + arg1);
+    callback();
   });
 
   this.When(/^I search for აკეთებს$/, function (callback) {
