@@ -23,7 +23,7 @@ function fake_words_api_search(search_word) {
 
   return {
     search_results: find_related_words(search_word_info)
-  }
+  };
 }
 
 export { fake_words_api_search };
