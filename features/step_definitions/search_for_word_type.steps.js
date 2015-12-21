@@ -6,19 +6,22 @@ module.exports = function() {
     this.visit_search_page(callback);
   });
 
+  this.When(/^I do nothing$/, function (callback) {
+    callback();
+  });
+
+  this.Then(/^I should see "([^"]*)" as the title$/, function (title_text, callback) {
+    this.browser.assert.text('title', title_text);
+    callback();
+  });
+
   this.When(/^I search for გაკეთება$/, function (callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback.pending();
   });
 
   this.Then(/^I should see "([^"]*)" in the results$/, function (arg1, callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback.pending();
   });
 
   this.When(/^I search for აკეთებს$/, function (callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback.pending();
   });
 
 };
