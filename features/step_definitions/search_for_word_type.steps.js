@@ -15,6 +15,11 @@ module.exports = function() {
     callback();
   });
 
+  this.Then(/^I should see "([^"]*)" as the page's heading$/, function (page_heading_text, callback) {
+    this.browser.assert.text('h1', page_heading_text);
+    callback();
+  });
+
   this.When(/^I search for გაკეთება$/, function (callback) {
   });
 
