@@ -20,17 +20,14 @@ module.exports = function() {
     callback();
   });
 
-  this.When(/^I search for გაკეთება$/, function (callback) {
-    this.browser.fill('.js-perform-search', 'გაკეთება');
+  this.When(/^I search for "([^"]*)"$/, function (search_query, callback) {
+    this.browser.fill('.js-perform-search', search_query);
     callback();
   });
 
-  this.Then(/^I should see "([^"]*)" in the results$/, function (arg1, callback) {
-    this.browser.assert.text('p', 'Type: ' + arg1);
+  this.Then(/^I should see "([^"]*)" in the results$/, function (word_type, callback) {
+    this.browser.assert.text('p', 'Type: ' + word_type);
     callback();
-  });
-
-  this.When(/^I search for აკეთებს$/, function (callback) {
   });
 
 };
