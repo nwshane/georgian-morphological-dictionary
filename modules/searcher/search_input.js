@@ -1,4 +1,4 @@
-import { fake_words_api_search } from './fake_words_api/search.js';
+import { fake_words_api_search } from '../fake_words_api/search.js';
 
 let search_input = {
 
