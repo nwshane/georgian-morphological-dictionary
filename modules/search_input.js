@@ -15,7 +15,10 @@ let search_input = {
       let search_query = this.value;
       let response = that.perform_search(search_query);
 
-      let processed_results = search_results_processor.process_response(response, search_query);
+      let processed_results = search_results_processor.process_response(
+        response,
+        search_query
+      );
 
       search_results_container.fill(processed_results);
     });
