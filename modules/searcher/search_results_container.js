@@ -10,7 +10,6 @@ let search_results_container = {
   </section>",
 
   compile_results_into_html: function(results) {
-
     let template = Handlebars.compile(this.template);
     return template(results);
   },

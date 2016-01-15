@@ -18,11 +18,36 @@ function find_word_info(search_word) {
   return search_word_info;
 }
 
+function filter_by_tense(tense, words) {
+  let filtered_words = words.filter(function(word) {
+    return (word['დრო'] === tense);
+  });
+
+  return filtered_words;
+}
+
+function organize_words(words) {
+  let organized_words = {
+    verbs: [
+      {
+        tense: 'აწმყო',
+        words: filter_by_tense('აწმყო', words)
+      }
+    ]
+  }
+
+  return organized_words;
+}
+
 function fake_words_api_search(search_word) {
   let search_word_info = find_word_info(search_word);
 
+  let words = find_related_words(search_word_info);
+  words = organize_words(words);
+
   return {
-    search_results: find_related_words(search_word_info)
+    search_word: search_word_info,
+    search_results: words
   };
 }
 
