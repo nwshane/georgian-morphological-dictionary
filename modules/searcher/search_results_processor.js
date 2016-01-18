@@ -1,3 +1,4 @@
+
 let search_results_processor = {
   get_search_results_from_response: function(response) {
     return response['search_results'];

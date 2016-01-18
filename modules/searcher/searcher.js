@@ -7,4 +7,6 @@ $(document).ready(function() {
     search_results_processor,
     search_results_container
   );
+
+  search_results_container.initialize();
 });
