@@ -46,16 +46,23 @@
     </section>
     <section>
       <h3>Verbs</h3>
-      <section>
-        <h4>{{search_results.verbs.[0].tense}}</h4>
-        <ul>
-          {{#each search_results.verbs.[0].words as |word|}}
-            <li>
-              {{word.text}}
-            </li>
-          {{/each}}
-        </ul>
-      </section>
+
+      <ul>
+        {{#each search_results.verbs as |verb_group|}}
+          <li>
+            <section>
+              <h4>{{verb_group.tense}}</h4>
+              <ul>
+                {{#each verb_group.words as |word|}}
+                  <li>
+                    {{word.text}}
+                  </li>
+                {{/each}}
+              </ul>
+            </section>
+          </li>
+        {{/each}}
+      </ul>
     </section>
   </script>
 
