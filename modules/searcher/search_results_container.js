@@ -2,15 +2,28 @@ let search_results_container = {
 
   selector: '.js-fill-with-search-results',
 
+  generate_list_from_array: function(array, get_content) {
+    var ret = "<ul>";
+
+    for(var i=0, j=array.length; i<j; i++) {
+      ret = ret + "<li>" + get_content(array[i]) + "</li>";
+    }
+
+    return ret + "</ul>";
+  },
+
   initialize: function() {
+    let that = this;
+
     Handlebars.registerHelper('list', function(context, options) {
-      var ret = "<ul>";
+      return that.generate_list_from_array(context, options.fn);
+    });
 
-      for(var i=0, j=context.length; i<j; i++) {
-        ret = ret + "<li>" + options.fn(context[i]) + "</li>";
-      }
+    Handlebars.registerHelper('verb_block', function(context, options) {
+      let html = '<h4>' + context.tense + '</h4>';
+      html += that.generate_list_from_array(context.words, options.fn);
 
-      return ret + "</ul>";
+      return html;
     });
   },
 

@@ -47,10 +47,9 @@
     <section>
       <h3>Verbs</h3>
       <section>
-        <h4>Present Tense</h4>
-        {{#list search_results.verbs.0.words}}
+        {{#verb_block search_results.verbs.[0] }}
         {{text}}
-        {{/list}}
+        {{/verb_block}}
       </section>
     </section>
   </script>
