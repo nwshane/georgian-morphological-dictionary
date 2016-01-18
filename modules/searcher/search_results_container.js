@@ -3,13 +3,13 @@ let search_results_container = {
   selector: '.js-fill-with-search-results',
 
   generate_list_from_array: function(array, get_content) {
-    var ret = "<ul>";
+    var html = "<ul>";
 
-    for(var i=0, j=array.length; i<j; i++) {
-      ret = ret + "<li>" + get_content(array[i]) + "</li>";
+    for (let i = 0; i < array.length; i++) {
+      html = html + "<li>" + get_content(array[i]) + "</li>";
     }
 
-    return ret + "</ul>";
+    return html + "</ul>";
   },
 
   initialize: function() {
