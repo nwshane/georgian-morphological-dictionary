@@ -27,7 +27,19 @@ function filter_by_tense(tense, words) {
 }
 
 function get_unique_tenses(words) {
-  return ['აწმყო', 'წარსული I'];
+  let tenses = words.map(function(word) {
+    return word['დრო'];
+  });
+
+  let unique_tenses = [];
+
+  for (let i = 0; i < tenses.length; i++) {
+    if ($.inArray(tenses[i], unique_tenses) === -1) {
+      unique_tenses.push(tenses[i]);
+    }
+  }
+
+  return unique_tenses;
 }
 
 function get_verb_groups(words) {
