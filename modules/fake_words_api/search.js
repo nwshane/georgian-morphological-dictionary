@@ -26,14 +26,23 @@ function filter_by_tense(tense, words) {
   return filtered_words;
 }
 
+function get_verb_groups(words) {
+  let tenses = ['აწმყო']
+  let verb_groups = [];
+
+  for (let i = 0; i < tenses.length; i++) {
+    verb_groups.push({
+      tense: tenses[i],
+      words: filter_by_tense(tenses[i], words)
+    });
+  }
+
+  return verb_groups;
+}
+
 function organize_words(words) {
   let organized_words = {
-    verbs: [
-      {
-        tense: 'აწმყო',
-        words: filter_by_tense('აწმყო', words)
-      }
-    ]
+    verbs: get_verb_groups(words)
   }
 
   return organized_words;
