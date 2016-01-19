@@ -2,6 +2,19 @@ let search_results_container = {
 
   selector: '.js-fill-with-search-results',
 
+  initialize: function() {
+    Handlebars.registerHelper('output_word', function(word, context) {
+      let search_word = context.data.root.search_word_text;
+      let html = word.text;
+
+      if (html === search_word) {
+        html = '<strong>' + html + '</strong>';
+      }
+
+      return new Handlebars.SafeString(html);
+    });
+  },
+
   template: function() {
     return $('#js-template-search-results').html();
   },
