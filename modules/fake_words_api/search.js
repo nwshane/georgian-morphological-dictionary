@@ -26,8 +26,12 @@ function filter_by_tense(tense, words) {
   return filtered_words;
 }
 
+function get_unique_tenses(words) {
+  return ['აწმყო', 'წარსული I'];
+}
+
 function get_verb_groups(words) {
-  let tenses = ['აწმყო']
+  let tenses = get_unique_tenses(words);
   let verb_groups = [];
 
   for (let i = 0; i < tenses.length; i++) {
