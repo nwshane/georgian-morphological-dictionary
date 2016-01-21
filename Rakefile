@@ -37,6 +37,6 @@ task :update_words do
 end
 
 desc 'Run tests'
-task :tests do
+task :test do
   puts `node_modules/cucumber/bin/cucumber.js`
 end
