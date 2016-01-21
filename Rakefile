@@ -35,8 +35,3 @@ task :update_words do
 
   File.write('modules/fake_words_api/demo_words.js', demo_words_module)
 end
-
-desc 'Run tests'
-task :test do
-  puts `node_modules/cucumber/bin/cucumber.js`
-end

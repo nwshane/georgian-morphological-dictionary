@@ -26,7 +26,7 @@ module.exports = function() {
   });
 
   this.Then(/^I should see "([^"]*)" in the results$/, function (result, callback) {
-    this.browser.assert.text('.js-fill-with-search-results', result)
+    this.browser.assert.textContains('.js-fill-with-search-results', result);
     callback();
   });
 
