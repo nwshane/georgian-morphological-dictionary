@@ -52,7 +52,7 @@ module.exports = function() {
   });
 
   this.Then(/^I should see "([^"]*)" as the search results heading$/, function (query, callback) {
-    this.browser.assert.text('.heading.mod-search-results', query)
+    this.browser.assert.text('.heading.mod-search-results', query);
     callback.pending();
   });
 
