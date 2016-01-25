@@ -9,13 +9,34 @@ function addAssertionTextContains() {
   }
 }
 
+function add_parameters(url, parameters) {
+  for (var i = 0; i < parameters.length; i++) {
+    if (i === 0) {
+      url += '?'
+    } else {
+      url += '&'
+    }
+    url += parameters[i]['param']
+    url += '='
+    url += parameters[i]['value']
+  }
+
+  return url;
+}
+
 function World() {
   addAssertionTextContains();
 
   this.browser = new Browser();
 
-  this.visit_search_page = function(callback) {
-    this.browser.visit('/', callback);
+  this.visit_search_page = function(callback, parameters) {
+    var url = '/';
+
+    if (parameters) {
+      url = add_parameters(url, parameters)
+    }
+
+    this.browser.visit(url, callback);
   }
 }
 

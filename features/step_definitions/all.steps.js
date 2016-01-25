@@ -6,8 +6,24 @@ module.exports = function() {
     this.visit_search_page(callback);
   });
 
+  this.Given(/^nothing$/, function (callback) {
+    // Write code here that turns the phrase above into concrete actions
+    callback();
+  });
+
   this.When(/^I do nothing$/, function (callback) {
     callback();
+  });
+
+  this.When(/^I navigate to a URL with the query "([^"]*)"$/, function (query_value, callback) {
+    var parameters = [
+      {
+        'param': 'q',
+        'value': query_value
+      }
+    ]
+
+    this.visit_search_page(callback, parameters);
   });
 
   this.When(/^I search for "([^"]*)"$/, function (search_query, callback) {
@@ -33,6 +49,11 @@ module.exports = function() {
   this.Then(/^I should see "([^"]*)" as the word type$/, function (word_type, callback) {
     this.browser.assert.text('p', 'Type: ' + word_type);
     callback();
+  });
+
+  this.Then(/^I should see "([^"]*)" as the search results heading$/, function (query, callback) {
+    this.browser.assert.text('.heading.mod-search-results', query)
+    callback.pending();
   });
 
 };
