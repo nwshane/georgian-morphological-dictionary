@@ -4,7 +4,7 @@ let search_input = {
 
   selector: '.js-perform-search',
 
-  perform_search: function(search_word) {
+  send_search_query: function(search_word) {
     return fake_words_api_search(search_word);
   },
 
@@ -12,18 +12,20 @@ let search_input = {
     let that = this;
 
     $(this.selector).change(function() {
-      let search_query = this.value;
-      let response = that.perform_search(search_query);
-
-      let processed_results = search_results_processor.process_response(
-        response,
-        search_query
-      );
-
-      search_results_container.fill(processed_results);
+      that.run_search(this.value, search_results_processor, search_results_container);
     });
-  }
+  },
 
+  run_search: function(search_query, search_results_processor, search_results_container) {
+    let response = this.send_search_query(search_query);
+
+    let processed_results = search_results_processor.process_response(
+      response,
+      search_query
+    );
+
+    search_results_container.fill(processed_results);
+  }
 }
 
 export { search_input };
