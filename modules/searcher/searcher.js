@@ -2,8 +2,8 @@ import { search_input } from './search_input.js';
 import { search_results_processor } from './search_results_processor.js';
 import { search_results_container } from './search_results_container.js';
 
-function url_query_parameter() {
-  return 'ვაკეთებ';
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
 }
 
 $(document).ready(function() {
@@ -14,9 +14,9 @@ $(document).ready(function() {
     search_results_container
   );
 
-  if (url_query_parameter()) {
+  if (getURLParameter('q')) {
     search_input.run_search(
-      url_query_parameter(),
+      getURLParameter('q'),
       search_results_processor,
       search_results_container
     );
