@@ -25,7 +25,7 @@ function concat_words_related_by_lemma(array, lemma_text) {
 
   let related_words = [lemma].concat(find_words_with_lemma(lemma['text']));
 
-  return array.concat()
+  return array.concat();
 }
 
 function find_related_words(search_word) {
