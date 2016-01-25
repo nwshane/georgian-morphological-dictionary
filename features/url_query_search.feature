@@ -1,3 +1,4 @@
+@url_query_search
 Feature: I see the results of a search included in the URL as query
   When I include a value in the URL's query parameter
   I want to see the results for that query
