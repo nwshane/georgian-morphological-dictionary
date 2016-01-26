@@ -1,3 +1,5 @@
+require('cucumber');
+
 module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -34,12 +36,26 @@ module.exports = function (grunt) {
          files: '**/*.scss',
          tasks: ['sass']
        }
+    },
+    cucumberjs: {
+      src: 'features',
+      options: {
+        steps: 'features/step_definitions',
+        support: 'features/support/world.js'
+      }
+    },
+    cucumberjs: {
+      options: {
+        format: 'pretty'
+      },
+      features: []
     }
   });
 
   grunt.loadNpmTasks("grunt-browserify");
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks('grunt-cucumberjs');
 
   grunt.registerTask("default", ["watch"]);
   grunt.registerTask("build", ["browserify", "sass"]);
