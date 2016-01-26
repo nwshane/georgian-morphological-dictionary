@@ -56,4 +56,9 @@ module.exports = function() {
     callback();
   });
 
+  this.Then(/^the value of parameter q in the URL should be "([^"]*)"$/, function (search_query, callback) {
+    this.browser.assert.url({ query: { q: search_query } });
+    callback();
+  });
+
 };
