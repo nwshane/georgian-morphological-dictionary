@@ -10,10 +10,6 @@ Feature: Verb search displays present tense conjugations of that verb
     Examples:
       | search_query | result |
       | გაკეთება     | ვაკეთებ |
-      | გაკეთება     | აკეთებ |
-      | გაკეთება     | აკეთებს |
-      | გაკეთება     | ვაკეთებთ |
-      | გაკეთება     | აკეთებთ |
       | გაკეთება     | აკეთებენ |
       | აკეთებს      | აკეთებენ |
       | აკეთებ       | ვაკეთებ |
