@@ -34,7 +34,7 @@ let search_input = {
     if (current_q_value !== search_query) {
       let urlPath = '/?q=' + search_query;
 
-      window.history.pushState({},"", urlPath);
+      window.history.pushState({}, "", urlPath);
     }
   }
 }
