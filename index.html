@@ -43,8 +43,14 @@
     <h2 class='heading mod-search-results'>{{search_word_text}}</h2>
 
     <section>
-      <h3>Word Info</h3>
-      <p>Type: {{search_word_type}}</p>
+      <h3 class='heading is-hidden'>Word Info</h3>
+
+      <ul class='word-info'>
+        <li class='word-info-item'>
+          <span class='word-info-type'>Type</span>
+          <span class='word-info-value'>{{search_word_type}}</span>
+        </li>
+      </ul>
     </section>
 
     <section>
@@ -64,7 +70,7 @@
                   <li>
                     {{output_word word}}
                   </li>
-                  
+
                 {{/each}}
 
               </ul>

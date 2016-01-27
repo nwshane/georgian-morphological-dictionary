@@ -1,0 +1,15 @@
+.word-info {
+  list-style: none;
+}
+
+  .word-info-type {
+  }
+
+  .word-info-type::after {
+    content: ':'
+  }
+
+  .word-info-value {
+    margin-left: 10px;
+    display: inline;
+  }
