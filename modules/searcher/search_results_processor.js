@@ -1,10 +1,10 @@
 
 let search_results_processor = {
-  get_search_results_from_response: function(response) {
+  get_search_results_from_response: function (response) {
     return response['search_results'];
   },
 
-  process_response: function(response, search_query) {
+  process_response: function (response, search_query) {
     let search_results = this.get_search_results_from_response(response);
     let search_word = response['search_word'];
 
@@ -16,6 +16,6 @@ let search_results_processor = {
 
     return data;
   }
-}
+};
 
 export { search_results_processor };

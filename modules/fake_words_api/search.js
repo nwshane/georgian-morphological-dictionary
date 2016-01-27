@@ -2,20 +2,20 @@ import { words } from './demo_words';
 
 // Removes duplicates in array
 // Source: http://stackoverflow.com/questions/1584370/how-to-merge-two-arrays-in-javascript-and-de-duplicate-items
-Array.prototype.unique = function() {
-    var a = this.concat();
-    for(var i=0; i<a.length; ++i) {
-        for(var j=i+1; j<a.length; ++j) {
-            if(a[i] === a[j])
-                a.splice(j--, 1);
+Array.prototype.unique = function () {
+  var a = this.concat();
+  for (var i = 0; i < a.length; ++i) {
+      for (var j = i + 1; j < a.length; ++j) {
+          if (a[i] === a[j])
+              a.splice(j--, 1);
         }
     }
 
-    return a;
+  return a;
 };
 
 function find_words_with_lemma(lemma) {
-  return words.filter(function(word) {
+  return words.filter(function (word) {
     return (word['lemma'] === lemma);
   });
 }
@@ -36,7 +36,7 @@ function find_related_words(search_word) {
     return related_words;
   }
 
-  let lemma_of_search_word = find_word_by_text(search_word['lemma'])
+  let lemma_of_search_word = find_word_by_text(search_word['lemma']);
 
   related_words.push(lemma_of_search_word);
 
@@ -46,13 +46,13 @@ function find_related_words(search_word) {
 }
 
 function find_word_by_text(word_text) {
-  return words.filter(function(word) {
-    return (word['text'] == word_text);
-  })[0];;
+  return words.filter(function (word) {
+    return (word['text'] === word_text);
+  })[0];
 }
 
 function filter_by_tense(tense, words) {
-  let filtered_words = words.filter(function(word) {
+  let filtered_words = words.filter(function (word) {
     return (word['დრო'] === tense);
   });
 
@@ -60,7 +60,7 @@ function filter_by_tense(tense, words) {
 }
 
 function get_unique_tenses(words) {
-  let tenses = words.map(function(word) {
+  let tenses = words.map(function (word) {
     return word['დრო'];
   });
 
@@ -92,7 +92,7 @@ function get_verb_groups(words) {
 function organize_words(words) {
   let organized_words = {
     verbs: get_verb_groups(words)
-  }
+  };
 
   return organized_words;
 }
