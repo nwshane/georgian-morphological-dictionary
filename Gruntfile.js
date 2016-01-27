@@ -38,13 +38,6 @@ module.exports = function (grunt) {
        }
     },
     cucumberjs: {
-      src: 'features',
-      options: {
-        steps: 'features/step_definitions',
-        support: 'features/support/world.js'
-      }
-    },
-    cucumberjs: {
       options: {
         format: 'pretty'
       },
