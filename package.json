@@ -2,6 +2,7 @@
   "name": "georgian-morphology-dictionary",
   "version": "0.0.1",
   "description": "People can use this website to search for words in the georgian morphology dictionary database.",
+  "repository": "https://github.com/nwshane/georgian-morphological-dictionary",
   "main": "dist/modules.js",
   "devDependencies": {
     "babelify": "^6.1.0",
