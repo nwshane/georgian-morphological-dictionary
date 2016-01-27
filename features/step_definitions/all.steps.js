@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function() {
+module.exports = function () {
 
   this.Given(/^I am on the search page$/, function (callback) {
     this.visit_search_page(callback);
@@ -21,7 +21,7 @@ module.exports = function() {
         'param': 'q',
         'value': query_value
       }
-    ]
+    ];
 
     this.visit_search_page(callback, parameters);
   });
