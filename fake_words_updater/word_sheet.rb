@@ -1,11 +1,16 @@
 # Converts google spreadsheet words to array of words
+# How to find the url of a google spreadsheet:
+# 1. Go to File -> Publish to the Web
+# 2. Where Entire Document is the default, select the desired sheet
+# 3. Where Web Page is the default, select Comma-separated values
+# 4. Copy the link
+
 class WordSheet
-  def initialize(id)
-    @id = id
-    @url = "https://docs.google.com/spreadsheets/d/#{id}/pub?gid=0&single=true&output=csv"
+  def initialize(url)
+    @url = url
   end
 
-  attr_reader :id, :url
+  attr_reader :url
 
   def words
     read_url = open(url).read.force_encoding('UTF-8')
