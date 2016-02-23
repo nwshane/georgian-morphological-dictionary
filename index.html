@@ -40,7 +40,7 @@
 
   <script id='js-template-search-results' type='text/x-handlebars-template'>
 
-    <h2 class='heading mod-search-results'>{{search_word_text}}</h2>
+    <h2 class='heading mod-search-results'>{{searchWordText}}</h2>
 
     <section>
       <h3 class='heading is-hidden'>Word Info</h3>
@@ -48,7 +48,7 @@
       <ul class='word-info'>
         <li class='word-info-item'>
           <span class='word-info-type'>Type</span>
-          <span class='word-info-value'>{{search_word_type}}</span>
+          <span class='word-info-value'>{{searchWordType}}</span>
         </li>
       </ul>
     </section>
@@ -57,18 +57,18 @@
       <h3>Verbs</h3>
 
       <ul>
-        {{#each search_results.verbs as |verb_group|}}
+        {{#each searchResults.verbs as |verbGroup|}}
           <li>
             <section>
 
-              <h4>{{verb_group.tense}}</h4>
+              <h4>{{verbGroup.tense}}</h4>
 
               <ul>
 
-                {{#each verb_group.words as |word|}}
+                {{#each verbGroup.words as |word|}}
 
                   <li>
-                    {{output_word word}}
+                    {{outputWord word}}
                   </li>
 
                 {{/each}}
