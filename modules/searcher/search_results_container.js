@@ -1,3 +1,5 @@
+import { wordResultsTemplate } from './word_results_template.js';
+
 const searchResultsContainer = {
 
   selector: '.js-fill-with-search-results',
@@ -15,21 +17,12 @@ const searchResultsContainer = {
     });
   },
 
-  template() {
-    return $('#js-template-search-results').html();
-  },
-
-  compileResultsIntoHtml(results) {
-    const template = Handlebars.compile(this.template());
-    return template(results);
-  },
-
   changeHtml(newHtml) {
     $(this.selector).html(newHtml);
   },
 
   fill(results) {
-    const newHtml = this.compileResultsIntoHtml(results);
+    const newHtml = wordResultsTemplate.compileResultsIntoHtml(results);
     this.changeHtml(newHtml);
   },
 };
