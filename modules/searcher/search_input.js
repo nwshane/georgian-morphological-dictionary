@@ -1,6 +1,6 @@
 import { fakeWordsApiSearch } from '../fake_words_api/search.js';
 import { QueryString } from '../utilities/QueryString.js';
-import { wordResultsTemplate } from './word_results_template.js';
+import { searchResultsTemplate } from './search_results_template.js';
 
 const searchInput = {
 
@@ -25,7 +25,9 @@ const searchInput = {
 
     const processedResults = searchResultsProcessor.processResponse(response);
 
-    searchResultsContainer.fill(wordResultsTemplate, processedResults);
+    const template = Object.create(searchResultsTemplate);
+    template.selector = '#js-template-search-results';
+    searchResultsContainer.fill(template, processedResults);
   },
 
   updateQParamInUrl(searchQuery) {
