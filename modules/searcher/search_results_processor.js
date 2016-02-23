@@ -4,7 +4,7 @@ const searchResultsProcessor = {
     return response.searchResults;
   },
 
-  processResponse(response, searchQuery) {
+  processResponse(response) {
     const searchResults = this.getSearchResultsFromResponse(response);
     const searchWord = response.searchWord;
 

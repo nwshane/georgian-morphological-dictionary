@@ -1,4 +1,4 @@
-let searchResultsContainer = {
+const searchResultsContainer = {
 
   selector: '.js-fill-with-search-results',
 
@@ -8,7 +8,7 @@ let searchResultsContainer = {
       let html = word.text;
 
       if (html === searchWord) {
-        html = '<strong>' + html + '</strong>';
+        html = `<strong>${html}</strong>`;
       }
 
       return new Handlebars.SafeString(html);

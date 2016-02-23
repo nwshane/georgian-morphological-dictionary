@@ -22,10 +22,7 @@ const searchInput = {
 
     const response = this.sendSearchQuery(searchQuery);
 
-    const processedResults = searchResultsProcessor.processResponse(
-      response,
-      searchQuery
-    );
+    const processedResults = searchResultsProcessor.processResponse(response);
 
     searchResultsContainer.fill(processedResults);
   },
