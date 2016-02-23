@@ -1,15 +1,15 @@
 import { fakeWordsApiSearch } from '../fake_words_api/search.js';
 import { QueryString } from '../utilities/QueryString.js';
 
-let searchInput = {
+const searchInput = {
 
   selector: '.js-perform-search',
 
-  sendSearchQuery: function (searchWord) {
+  sendSearchQuery(searchWord) {
     return fakeWordsApiSearch(searchWord);
   },
 
-  bindToSearchMethod: function (searchResultsProcessor, searchResultsContainer) {
+  bindToSearchMethod(searchResultsProcessor, searchResultsContainer) {
     const that = this;
 
     $(this.selector).change(function () {
@@ -17,7 +17,7 @@ let searchInput = {
     });
   },
 
-  runSearch: function (searchQuery, searchResultsProcessor, searchResultsContainer) {
+  runSearch(searchQuery, searchResultsProcessor, searchResultsContainer) {
     this.updateQParamInUrl(searchQuery);
 
     const response = this.sendSearchQuery(searchQuery);
@@ -30,10 +30,10 @@ let searchInput = {
     searchResultsContainer.fill(processedResults);
   },
 
-  updateQParamInUrl: function (searchQuery) {
+  updateQParamInUrl(searchQuery) {
     const currentQValue = QueryString.q;
     if (currentQValue !== searchQuery) {
-      const urlPath = '/?q=' + searchQuery;
+      const urlPath = `/?q=${searchQuery}`;
 
       window.history.pushState({}, '', urlPath);
     }

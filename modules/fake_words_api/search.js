@@ -98,7 +98,7 @@ function fakeWordsApiSearch(searchQuery) {
   );
 
   return {
-    searchWord: searchWord,
+    searchWord,
     searchResults: results
   };
 }

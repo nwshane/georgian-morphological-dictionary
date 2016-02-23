@@ -2,7 +2,7 @@ let searchResultsContainer = {
 
   selector: '.js-fill-with-search-results',
 
-  initialize: function () {
+  initialize() {
     Handlebars.registerHelper('outputWord', function (word, context) {
       const searchWord = context.data.root.search_word_text;
       let html = word.text;
@@ -15,20 +15,20 @@ let searchResultsContainer = {
     });
   },
 
-  template: function () {
+  template() {
     return $('#js-template-search-results').html();
   },
 
-  compileResultsIntoHtml: function (results) {
+  compileResultsIntoHtml(results) {
     const template = Handlebars.compile(this.template());
     return template(results);
   },
 
-  changeHtml: function (newHtml) {
+  changeHtml(newHtml) {
     $(this.selector).html(newHtml);
   },
 
-  fill: function (results) {
+  fill(results) {
     const newHtml = this.compileResultsIntoHtml(results);
     this.changeHtml(newHtml);
   },

@@ -1,17 +1,17 @@
 
-let searchResultsProcessor = {
-  getSearchResultsFromResponse: function (response) {
+const searchResultsProcessor = {
+  getSearchResultsFromResponse(response) {
     return response.searchResults;
   },
 
-  processResponse: function (response, searchQuery) {
+  processResponse(response, searchQuery) {
     const searchResults = this.getSearchResultsFromResponse(response);
     const searchWord = response.searchWord;
-    
-    let data = {
+
+    const data = {
       searchWordText: searchWord.text,
       searchWordType: searchWord.type,
-      searchResults: searchResults
+      searchResults
     };
 
     return data;
