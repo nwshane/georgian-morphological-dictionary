@@ -1,5 +1,6 @@
 import { fakeWordsApiSearch } from '../fake_words_api/search.js';
 import { QueryString } from '../utilities/QueryString.js';
+import { wordResultsTemplate } from './word_results_template.js';
 
 const searchInput = {
 
@@ -24,7 +25,7 @@ const searchInput = {
 
     const processedResults = searchResultsProcessor.processResponse(response);
 
-    searchResultsContainer.fill(processedResults);
+    searchResultsContainer.fill(wordResultsTemplate, processedResults);
   },
 
   updateQParamInUrl(searchQuery) {

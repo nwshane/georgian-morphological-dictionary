@@ -1,5 +1,3 @@
-import { wordResultsTemplate } from './word_results_template.js';
-
 const searchResultsContainer = {
 
   selector: '.js-fill-with-search-results',
@@ -21,8 +19,8 @@ const searchResultsContainer = {
     $(this.selector).html(newHtml);
   },
 
-  fill(results) {
-    const newHtml = wordResultsTemplate.compileResultsIntoHtml(results);
+  fill(template, results) {
+    const newHtml = template.compileResultsIntoHtml(results);
     this.changeHtml(newHtml);
   },
 };
