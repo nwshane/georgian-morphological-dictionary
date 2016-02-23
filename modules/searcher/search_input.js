@@ -10,7 +10,7 @@ let searchInput = {
   },
 
   bindToSearchMethod: function (searchResultsProcessor, searchResultsContainer) {
-    let that = this;
+    const that = this;
 
     $(this.selector).change(function () {
       that.runSearch(this.value, searchResultsProcessor, searchResultsContainer);
@@ -20,9 +20,9 @@ let searchInput = {
   runSearch: function (searchQuery, searchResultsProcessor, searchResultsContainer) {
     this.updateQParamInUrl(searchQuery);
 
-    let response = this.sendSearchQuery(searchQuery);
+    const response = this.sendSearchQuery(searchQuery);
 
-    let processedResults = searchResultsProcessor.processResponse(
+    const processedResults = searchResultsProcessor.processResponse(
       response,
       searchQuery
     );
@@ -31,9 +31,9 @@ let searchInput = {
   },
 
   updateQParamInUrl: function (searchQuery) {
-    let currentQValue = QueryString.q;
+    const currentQValue = QueryString.q;
     if (currentQValue !== searchQuery) {
-      let urlPath = '/?q=' + searchQuery;
+      const urlPath = '/?q=' + searchQuery;
 
       window.history.pushState({}, '', urlPath);
     }

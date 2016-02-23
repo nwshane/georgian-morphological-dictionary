@@ -5,8 +5,8 @@ let searchResultsProcessor = {
   },
 
   processResponse: function (response, searchQuery) {
-    let searchResults = this.getSearchResultsFromResponse(response);
-    let searchWord = response.searchWord;
+    const searchResults = this.getSearchResultsFromResponse(response);
+    const searchWord = response.searchWord;
     
     let data = {
       searchWordText: searchWord.text,

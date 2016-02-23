@@ -4,7 +4,7 @@ let searchResultsContainer = {
 
   initialize: function () {
     Handlebars.registerHelper('outputWord', function (word, context) {
-      let searchWord = context.data.root.search_word_text;
+      const searchWord = context.data.root.search_word_text;
       let html = word.text;
 
       if (html === searchWord) {
@@ -20,7 +20,7 @@ let searchResultsContainer = {
   },
 
   compileResultsIntoHtml: function (results) {
-    let template = Handlebars.compile(this.template());
+    const template = Handlebars.compile(this.template());
     return template(results);
   },
 
@@ -29,7 +29,7 @@ let searchResultsContainer = {
   },
 
   fill: function (results) {
-    let newHtml = this.compileResultsIntoHtml(results);
+    const newHtml = this.compileResultsIntoHtml(results);
     this.changeHtml(newHtml);
   },
 };
